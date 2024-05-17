@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Recomendations {
 
     Scanner sc = new Scanner(System.in);
-    LinkedHashSet<Objects> comentarys = new LinkedHashSet<>();
+
 
     private int iDRecomendation;
     Book book;
@@ -23,12 +23,12 @@ public class Recomendations {
     Music music;
     User user;
     private int likes;
-    private ArrayList<LinkedHashSet<Objects>> comentary;
+    private ArrayList<String> comentary;
 
     public Recomendations() {
     }
 
-    public Recomendations(int iDRecomendation, Book book, Article article, Movie movie, Music music, User user, int likes, ArrayList<String> comentary) {
+    public Recomendations(int iDRecomendation, Book book, Article article, Movie movie, Music music, User user) {
         this.iDRecomendation = iDRecomendation;
         this.book = book;
         this.article = article;
@@ -36,7 +36,7 @@ public class Recomendations {
         this.music = music;
         this.user = user;
         this.likes = 0;
-        this.comentary = new ArrayList<LinkedHashSet<Objects>>();
+        this.comentary = new ArrayList<>();
     }
 
     public int getiDRecomendation() {
@@ -95,15 +95,20 @@ public class Recomendations {
         likes++;
     }
 
-    public ArrayList<LinkedHashSet<Objects>> getComentary() {
+    public ArrayList<String> getComentarys() {
         return comentary;
     }
 
-    public void addComentary(){
-        comentary.add(comentarys);
+    public void setComentary(ArrayList<String> comentary) {
+        this.comentary = comentary;
     }
 
+
+    LinkedHashSet<Objects> comentarys = new LinkedHashSet<>();
+
     public void registerComentary(){
-        
+        System.out.println("Ingresa el ID de la recomendacion: ");
+        iDRecomendation = sc.nextInt();
+
     }
 }
