@@ -1,6 +1,10 @@
 package main.multimedia;
 
+import java.util.Scanner;
+
 public class Music {
+
+    Scanner sc = new Scanner(System.in);
 
     private int idSong;
     private String nameSong;
@@ -50,10 +54,19 @@ public class Music {
     }
 
     public void createSong(){
+        System.out.println("Ingrese el ID de la cancion: ");
+        idSong = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Ingrese el nombre de la cancion: ");
+        nameSong = sc.nextLine();
+        System.out.println("Ingrese el genero de la cancion: ");
+        gender = sc.nextLine();
 
     }
 
     public void selectSong(){
-
+        System.out.println("El ID de la cancion es: " + idSong);
+        System.out.println("El nombre de la cancion es: " + nameSong);
+        System.out.println("El genero de la cancion es: " + gender);
     }
 }
